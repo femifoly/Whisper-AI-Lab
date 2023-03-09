@@ -3,7 +3,7 @@
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
-![](
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/installwhisper.png)
 # Steps
 ## 1. Prepare Instance to Google Colab on EC2 Instance
 - **Launch a GPU instance on AWS Cloud**
