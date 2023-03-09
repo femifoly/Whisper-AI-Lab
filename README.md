@@ -59,6 +59,7 @@ plt.colorbar()
 plt.tight_layout()
 plt.show()
 ```
+
 ```
 # Size of the Fast Fourier Transform (FFT), which will also be used as the window length
 n_fft=1024
@@ -77,6 +78,7 @@ print("The size of the spectrogram is ([(frame_size/2) + 1 x number of frames])"
 print("The frame size that we have specified is the number of samples to consider for the STFT. In our case, it is equal to the n_fft",n_fft, " samples")
 print("The number of frames depends on the total length of the sampled signal, the number of samples in each frame and the hop length.")
 ```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/fft.png)
 
 ### Transform the spectrogram output to a logarithmic scale by transforming the amplitude to decibels and frequency to a mel scale
 ```
@@ -91,9 +93,12 @@ plt.title('Mel spectrogram')
 plt.tight_layout()
 plt.show()
 ```
+
+
 ### Log Mel Spectrogram
 Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
 ```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
 # Detect the spoken language
 ```
