@@ -4,6 +4,14 @@
 pip install git+https://github.com/openai/whisper.git
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/installwhisper.png)
+
+```
+import whisper
+model = whisper.load_model("medium")
+result = model.transcribe("test1.wav", language='en', fp16=False)
+print(result["text"])
+```
+
 # Steps
 ## 1. Prepare Instance to Google Colab on EC2 Instance
 - **Launch a GPU instance on AWS Cloud**
