@@ -46,6 +46,7 @@ librosa.display.waveplot(Test1, sr=sr);
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
 # Detect the spoken language
+```
 _, probs = model.detect_language(mel)
 lang = max(probs, key=probs.get)
 prob = "{0:.0%}".format(max(probs.values()))
