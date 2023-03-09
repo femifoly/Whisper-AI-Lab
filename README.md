@@ -4,6 +4,7 @@
 
 #### 1. Data Processing and Feature Extraction
 - **Prerequisites for Training a Model**
+
 *For the best results when training a model, you will need:*
 - **Short audio recordings (at least 100?) that are:**
 - **In 16-bit, mono PCM WAV format.**
