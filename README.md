@@ -139,4 +139,5 @@ prob = "{0:.0%}".format(max(probs.values()))
 
 
 
-## 3. 
+#### 9. Log Mel Spectrogram
+Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
