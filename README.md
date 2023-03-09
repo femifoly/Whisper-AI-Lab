@@ -1,5 +1,7 @@
 # Whisper-AI-Lab
 ## Speech recognition and training using whisper AI
+# Steps
+## 1. Install whisper and required libraries
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
@@ -113,12 +115,7 @@ print(f'Detected language (and probability): {lang}', f'({prob})')
 ![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
 ![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
 
-# Steps
-## 1. Prepare Instance to Google Colab on EC2 Instance
-- **Launch a GPU instance on AWS Cloud**
-- **Install CUDA with the latest drivers** 
-- **Install Jupyter Notebook remotely - ssh**
-- --------
+---------
 ## 2. Data Processing and Feature Extraction
 - **Prerequisites for Training a Model**
 
