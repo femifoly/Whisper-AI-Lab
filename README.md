@@ -39,13 +39,12 @@ import skimage.io
 ```
 filename = 'test1.wav'
 y, sr = librosa.load(filename)
-# trim silent edges
+*trim silent edges*
 Test1, _ = librosa.effects.trim(y)
 librosa.display.waveplot(Test1, sr=sr);
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
-# Detect language
-``# detect the spoken language
+# Detect the spoken language
 _, probs = model.detect_language(mel)
 lang = max(probs, key=probs.get)
 prob = "{0:.0%}".format(max(probs.values()))
@@ -53,7 +52,8 @@ prob = "{0:.0%}".format(max(probs.values()))
 # print language that scored the highest liklihood
 print(f'Detected language (and probability): {lang}', f'({prob})')
 ```
-![](https://user-images.githubusercontent.com/120579796/224144962-b4436762-5617-4f53-93e2-3a94b627e984.png)
+![.Wav](https://user-images.githubusercontent.com/120579796/224144962-b4436762-5617-4f53-93e2-3a94b627e984.png)
+![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
 
 # Steps
 ## 1. Prepare Instance to Google Colab on EC2 Instance
