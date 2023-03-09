@@ -101,10 +101,12 @@ Move from power (mel) spectrum and apply log and move amplitude to a log scale (
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
 # Detect the spoken language
+
 ```
 _, probs = model.detect_language(mel)
 lang = max(probs, key=probs.get)
 prob = "{0:.0%}".format(max(probs.values()))
+```
 
 # print language that scored the highest liklihood
 print(f'Detected language (and probability): {lang}', f'({prob})')
