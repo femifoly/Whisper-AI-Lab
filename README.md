@@ -22,11 +22,12 @@
 - **Lots of RAM (at least 16 GB of RAM is preferable).**
 
 #### 2. Install whisper and the required libraries
+
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/installwhisper.png)
-```
+
 ```
 import librosa as librosa
 import numpy as np
@@ -40,7 +41,7 @@ import os
 from sklearn.model_selection import train_test_split
 import skimage.io
 ```
-
+#### Transcribe raw wav file(s)
 ```
 import whisper
 model = whisper.load_model("medium")
@@ -48,7 +49,9 @@ result = model.transcribe("test1.wav", language='en', fp16=False)
 print(result["text"])
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Importwhisper.png)
-## Below we'll look at some low level Whisper access using whisper.decode() and whisper.detect_language():
+
+#### 3. Below we'll look at some low level Whisper access using whisper.decode() and whisper.detect_language():
+
 ```
 model = whisper.load_model('medium')
 
@@ -59,7 +62,7 @@ audio = whisper.pad_or_trim(audio)
 # make log-Mel spectrogram and move to the same device as the model
 mel = whisper.log_mel_spectrogram(audio).to(model.device)
 ```
-# View raw waveform (time domain) Spectogram
+#### 4. View raw waveform (time domain) Spectogram
 ```
 filename = 'test1.wav'
 y, sr = librosa.load(filename)
@@ -69,10 +72,10 @@ librosa.display.waveplot(Test1, sr=sr);
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
 
-# Find Spectogram
+#### 5. Find Spectogram
 Another key thing to remember is that spectrum of a signal is found by taking the Fourier Transform of the signal in a time domain. The approach that is normally taken in to divide the sampled signal into equal parts (as mentioned above) and take the Fourier Transform of each part individually. This is called STFT. Thefore, when we want to take the STFT of a signal, we need to specify how many samples we should consider at a time.
 
-# Display the spectrogram
+#### 6. Display the spectrogram
 
 ```
 librosa.display.specshow(spectrogram_librosa, sr=sr, x_axis='time', y_axis='linear',hop_length=hop_length)
@@ -102,7 +105,7 @@ print("The number of frames depends on the total length of the sampled signal, t
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/fft.png)
 
-### Transform the spectrogram output to a logarithmic scale by transforming the amplitude to decibels and frequency to a mel scale
+#### 7. Transform the spectrogram output to a logarithmic scale by transforming the amplitude to decibels and frequency to a mel scale
 ```
 mel_bins = 64 # Number of mel bands
 fmin = 0
@@ -117,7 +120,7 @@ plt.show()
 ```
 
 
-### Log Mel Spectrogram
+#### 8. Log Mel Spectrogram
 Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
 ```
 _, probs = model.detect_language(mel)
@@ -126,7 +129,7 @@ prob = "{0:.0%}".format(max(probs.values()))
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
-# Detect the spoken language
+#### 9. Detect the spoken language
 
 ```
 # print language that scored the highest liklihood
