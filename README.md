@@ -23,6 +23,18 @@ audio = whisper.pad_or_trim(audio)
 # make log-Mel spectrogram and move to the same device as the model
 mel = whisper.log_mel_spectrogram(audio).to(model.device)
 ```
+# View Spectogram
+```
+import librosa
+import librosa.display
+
+filename = 'test1.wav'
+y, sr = librosa.load(filename)
+# trim silent edges
+Test1, _ = librosa.effects.trim(y)
+librosa.display.waveplot(Test1, sr=sr);
+```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
 # Steps
 ## 1. Prepare Instance to Google Colab on EC2 Instance
 - **Launch a GPU instance on AWS Cloud**
