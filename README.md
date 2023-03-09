@@ -23,7 +23,7 @@ audio = whisper.pad_or_trim(audio)
 # make log-Mel spectrogram and move to the same device as the model
 mel = whisper.log_mel_spectrogram(audio).to(model.device)
 ```
-# View Spectogram
+# View raw waveform (time domain) Spectogram
 ```
 import librosa as librosa
 import numpy as np
@@ -44,7 +44,49 @@ y, sr = librosa.load(filename)
 Test1, _ = librosa.effects.trim(y)
 librosa.display.waveplot(Test1, sr=sr);
 ```
+# Find Spectogram
+Another key thing to remember is that spectrum of a signal is found by taking the Fourier Transform of the signal in a time domain. The approach that is normally taken in to divide the sampled signal into equal parts (as mentioned above) and take the Fourier Transform of each part individually. This is called STFT. Thefore, when we want to take the STFT of a signal, we need to specify how many samples we should consider at a time.
+```
+# Display the spectrogram
+```
+librosa.display.specshow(spectrogram_librosa, sr=sr, x_axis='time', y_axis='linear',hop_length=hop_length)
+plt.title('Linear Frequency Power Spectrogram')
+plt.colorbar()
+plt.tight_layout()
+plt.show()
+```
+
+# Size of the Fast Fourier Transform (FFT), which will also be used as the window length
+n_fft=1024
+
+# Step or stride between windows. If the step is smaller than the window length, the windows will overlap
+hop_length=320
+
+# Specify the window type for FFT/STFT
+window_type ='hann'
+
+# Calculate the spectrogram as the square of the complex magnitude of the STFT
+spectrogram_librosa = np.abs(librosa.stft(y, n_fft=n_fft, hop_length=hop_length, win_length=n_fft, window=window_type)) ** 2
+
+print("The shape of spectrogram_librosa is: ", spectrogram_librosa.shape)
+print("The size of the spectrogram is ([(frame_size/2) + 1 x number of frames])")
+print("The frame size that we have specified is the number of samples to consider for the STFT. In our case, it is equal to the n_fft",n_fft, " samples")
+print("The number of frames depends on the total length of the sampled signal, the number of samples in each frame and the hop length.")
+```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
+### Transform the spectrogram output to a logarithmic scale by transforming the amplitude to decibels and frequency to a mel scale
+```
+mel_bins = 64 # Number of mel bands
+fmin = 0
+fmax= None
+Mel_spectrogram = librosa.feature.melspectrogram(y=y, sr=sr, n_fft=n_fft, hop_length=hop_length, win_length=n_fft, window=window_type, n_mels = mel_bins, power=2.0)
+print("The shape of mel spectrogram is: ", Mel_spectrogram.shape)
+```
+librosa.display.specshow(Mel_spectrogram, sr=sr, x_axis='time', y_axis='mel',hop_length=hop_length)
+plt.colorbar(format='%+2.0f dB')
+plt.title('Mel spectrogram')
+plt.tight_layout()
+plt.show()
 # Detect the spoken language
 ```
 _, probs = model.detect_language(mel)
