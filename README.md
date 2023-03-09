@@ -1,11 +1,44 @@
 # Whisper-AI-Lab
 ## Speech recognition and training using whisper AI
 ### Steps
-##### 1. Install whisper and required libraries
+
+#### 1. Data Processing and Feature Extraction
+- **Prerequisites for Training a Model**
+*For the best results when training a model, you will need:*
+- **Short audio recordings (at least 100?) that are:**
+- **In 16-bit, mono PCM WAV format.**
+- **Between 1 and 30 seconds each.**
+- **Have a sample rate of 22050 Hz.**
+- **Have a minimum of background noise and distortion.**
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/AudioSplit.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Noisereduction.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/preprocessed%20audio.png)
+
+ *Have no long pauses of silence at the beginning, throughout the middle, and at the end.*
+- **A metadata.csv file that references each WAV file and indicates what text is spoken in the WAV file.**
+- **A configuration file tailored to your data set and chosen vocoder (e.g. Tacotron, WavGrad, etc).**
+- **A machine with a fast CPU (ideally an nVidia GPU with CUDA support and at least 12 GB of GPU RAM; you cannot effectively use CUDA if you have less than 8 GB OF GPU RAM).**
+- **Lots of RAM (at least 16 GB of RAM is preferable).**
+
+#### 2. Install whisper and the required libries
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/installwhisper.png)
+```
+```
+import librosa as librosa
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+%matplotlib inline
+import librosa.display
+from IPython.display import Audio
+import pandas as pd
+import os
+from sklearn.model_selection import train_test_split
+import skimage.io
+```
 
 ```
 import whisper
@@ -26,20 +59,6 @@ audio = whisper.pad_or_trim(audio)
 mel = whisper.log_mel_spectrogram(audio).to(model.device)
 ```
 # View raw waveform (time domain) Spectogram
-```
-import librosa as librosa
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-%matplotlib inline
-import librosa.display
-from IPython.display import Audio
-import pandas as pd
-import os
-from sklearn.model_selection import train_test_split
-import skimage.io
-```
-
 ```
 filename = 'test1.wav'
 y, sr = librosa.load(filename)
@@ -114,25 +133,5 @@ print(f'Detected language (and probability): {lang}', f'({prob})')
 ```
 ![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
 ![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
-
----------
-## 2. Data Processing and Feature Extraction
-- **Prerequisites for Training a Model**
-
-*For the best results when training a model, you will need:*
-- **Short audio recordings (at least 100?) that are:**
-- **In 16-bit, mono PCM WAV format.**
-- **Between 1 and 30 seconds each.**
-- **Have a sample rate of 22050 Hz.**
-- **Have a minimum of background noise and distortion.**
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/AudioSplit.png)
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Noisereduction.png)
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/preprocessed%20audio.png)
----------
- *Have no long pauses of silence at the beginning, throughout the middle, and at the end.*
-- **A metadata.csv file that references each WAV file and indicates what text is spoken in the WAV file.**
-- **A configuration file tailored to your data set and chosen vocoder (e.g. Tacotron, WavGrad, etc).**
-- **A machine with a fast CPU (ideally an nVidia GPU with CUDA support and at least 12 GB of GPU RAM; you cannot effectively use CUDA if you have less than 8 GB OF GPU RAM).**
-- **Lots of RAM (at least 16 GB of RAM is preferable).**
 
 ## 3. 
