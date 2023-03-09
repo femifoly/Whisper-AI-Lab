@@ -65,8 +65,11 @@ mel = whisper.log_mel_spectrogram(audio).to(model.device)
 #### 9. Detect the spoken language
 
 ```
+_, probs = model.detect_language(mel)
+lang = max(probs, key=probs.get)
+prob = "{0:.0%}".format(max(probs.values()))
 # print language that scored the highest liklihood
-print(f'Detected language (and probability): {lang}', f'({prob})')
+print(f'Detected language and probability): {lang}', f'({prob})')
 ```
 ![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
 ![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
@@ -131,9 +134,18 @@ plt.show()
 #### 8. Log Mel Spectrogram
 Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
 ```
-_, probs = model.detect_language(mel)
-lang = max(probs, key=probs.get)
-prob = "{0:.0%}".format(max(probs.values()))
+mel_spectrogram_db = librosa.power_to_db(Mel_spectrogram, ref=np.max)
+print("The shape of Log Mel spectrogram is: ", mel_spectrogram_db.shape)
+librosa.display.specshow(mel_spectrogram_db, sr=sr, x_axis='time', y_axis='mel',hop_length=hop_length)
+plt.colorbar(format='%+2.0f dB')
+plt.title('Log Mel spectrogram')
+plt.tight_layout()
+plt.show()
+```
+
+
+```
+
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
