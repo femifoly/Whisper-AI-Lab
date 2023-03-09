@@ -3,7 +3,7 @@
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
-![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/installwhisper.png)
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/installwhisper.png)
 
 ```
 import whisper
@@ -27,9 +27,9 @@ print(result["text"])
 - **Between 1 and 30 seconds each.**
 - **Have a sample rate of 22050 Hz.**
 - **Have a minimum of background noise and distortion.**
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/AudioSplit.png)
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Noisereduction.png)
-- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/preprocessed%20audio.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/AudioSplit.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Noisereduction.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/preprocessed%20audio.png)
 ---------
  *Have no long pauses of silence at the beginning, throughout the middle, and at the end.*
 - **A metadata.csv file that references each WAV file and indicates what text is spoken in the WAV file.**
