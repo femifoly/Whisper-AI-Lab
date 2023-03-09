@@ -129,7 +129,7 @@ plt.title('Mel spectrogram')
 plt.tight_layout()
 plt.show()
 ```
-
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
 #### 8. Log Mel Spectrogram
 Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
@@ -142,14 +142,6 @@ plt.title('Log Mel spectrogram')
 plt.tight_layout()
 plt.show()
 ```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/logmelspectogram.png)
 
-
-```
-
-```
-![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
-
-
-
-#### 9. Log Mel Spectrogram
-Move from power (mel) spectrum and apply log and move amplitude to a log scale (decibels). While doing so we will also normalize the spectrogram so that its maximum represent the 0 dB point.
+#### 10.
