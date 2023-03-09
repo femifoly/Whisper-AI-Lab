@@ -21,7 +21,7 @@
 - **A machine with a fast CPU (ideally an nVidia GPU with CUDA support and at least 12 GB of GPU RAM; you cannot effectively use CUDA if you have less than 8 GB OF GPU RAM).**
 - **Lots of RAM (at least 16 GB of RAM is preferable).**
 
-#### 2. Install whisper and the required libries
+#### 2. Install whisper and the required libraries
 ```
 pip install git+https://github.com/openai/whisper.git
 ```
