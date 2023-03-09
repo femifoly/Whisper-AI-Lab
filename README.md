@@ -62,6 +62,14 @@ audio = whisper.pad_or_trim(audio)
 # make log-Mel spectrogram and move to the same device as the model
 mel = whisper.log_mel_spectrogram(audio).to(model.device)
 ```
+#### 9. Detect the spoken language
+
+```
+# print language that scored the highest liklihood
+print(f'Detected language (and probability): {lang}', f'({prob})')
+```
+![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
+![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
 #### 4. View raw waveform (time domain) Spectogram
 ```
 filename = 'test1.wav'
@@ -129,13 +137,6 @@ prob = "{0:.0%}".format(max(probs.values()))
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melspectogram.png)
 
-#### 9. Detect the spoken language
 
-```
-# print language that scored the highest liklihood
-print(f'Detected language (and probability): {lang}', f'({prob})')
-```
-![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
-![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
 
 ## 3. 
