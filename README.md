@@ -37,6 +37,7 @@ import os
 from sklearn.model_selection import train_test_split
 import skimage.io
 ```
+```
 filename = 'test1.wav'
 y, sr = librosa.load(filename)
 *trim silent edges*
