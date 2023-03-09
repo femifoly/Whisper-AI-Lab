@@ -12,6 +12,17 @@ result = model.transcribe("test1.wav", language='en', fp16=False)
 print(result["text"])
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Importwhisper.png)
+## Below we'll look at some low level Whisper access using whisper.decode() and whisper.detect_language():
+```
+model = whisper.load_model('medium')
+
+# load audio and pad/trim it to fit 30 seconds
+audio = whisper.load_audio('test1.wav')
+audio = whisper.pad_or_trim(audio)
+
+# make log-Mel spectrogram and move to the same device as the model
+mel = whisper.log_mel_spectrogram(audio).to(model.device)
+```
 # Steps
 ## 1. Prepare Instance to Google Colab on EC2 Instance
 - **Launch a GPU instance on AWS Cloud**
