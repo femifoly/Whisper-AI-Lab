@@ -19,7 +19,9 @@ pip install git+https://github.com/openai/whisper.git
 - **Between 1 and 30 seconds each.**
 - **Have a sample rate of 22050 Hz.**
 - **Have a minimum of background noise and distortion.**
-- 1[](
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/AudioSplit.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Noisereduction.png)
+- ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/preprocessed%20audio.png)
 ---------
  *Have no long pauses of silence at the beginning, throughout the middle, and at the end.*
 - **A metadata.csv file that references each WAV file and indicates what text is spoken in the WAV file.**
