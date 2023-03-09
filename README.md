@@ -52,7 +52,7 @@ prob = "{0:.0%}".format(max(probs.values()))
 # print language that scored the highest liklihood
 print(f'Detected language (and probability): {lang}', f'({prob})')
 ```
-![.Wav](https://user-images.githubusercontent.com/120579796/224144962-b4436762-5617-4f53-93e2-3a94b627e984.png)
+![.Wav](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectedlangwav.png)
 ![.mp3](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Detectlangmp3.png)
 
 # Steps
