@@ -188,3 +188,4 @@ plt.title('Mel filter bank')
 plt.tight_layout()
 plt.show()
 ```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melfilterbank.png)
