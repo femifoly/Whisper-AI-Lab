@@ -176,3 +176,4 @@ with open('logMel.npy', 'rb') as f:
 
 np.savetxt('logMel.out', mel_spectrogram_db, delimiter=',') # takes more space compared to saving as .npy
 ```
+![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/logmeltext.png)
