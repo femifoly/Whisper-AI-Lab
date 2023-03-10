@@ -15,12 +15,6 @@
 - ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Noisereduction.png)
 - ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/preprocessed%20audio.png)
 
- *Have no long pauses of silence at the beginning, throughout the middle, and at the end.*
-- **A metadata.csv file that references each WAV file and indicates what text is spoken in the WAV file.**
-- **A configuration file tailored to your data set and chosen vocoder (e.g. Tacotron, WavGrad, etc).**
-- **A machine with a fast CPU (ideally an nVidia GPU with CUDA support and at least 12 GB of GPU RAM; you cannot effectively use CUDA if you have less than 8 GB OF GPU RAM).**
-- **Lots of RAM (at least 16 GB of RAM is preferable).**
-
 #### 2. Install whisper and the required libraries
 
 ```
@@ -189,3 +183,47 @@ plt.tight_layout()
 plt.show()
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/melfilterbank.png)
+
+#### 12. Lib for training
+
+```
+%%capture
+! pip install pyopenjtalk==0.3.0
+! pip install pytorch-lightning==1.7.7
+! pip install -qqq evaluate==0.2.2
+```
+
+```
+import IPython.display
+from pathlib import Path
+
+import os
+import numpy as np
+
+try:
+    import tensorflow  # required in Colab to avoid protobuf compatibility issues
+except ImportError:
+    pass
+
+import torch
+from torch import nn
+import pandas as pd
+import whisper
+import torchaudio
+import torchaudio.transforms as at
+
+from pytorch_lightning import LightningModule
+from pytorch_lightning import Trainer, seed_everything
+from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
+from pytorch_lightning.loggers import TensorBoardLogger
+
+from tqdm.notebook import tqdm
+import pyopenjtalk
+import evaluate
+
+from transformers import (
+    AdamW,
+    get_linear_schedule_with_warmup
+)
+```
+
