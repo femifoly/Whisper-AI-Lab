@@ -248,15 +248,11 @@ def load_wave(wave_path, sample_rate:int=16000) -> torch.Tensor:
     return waveform
 ```
 #### 14. Albanian Datasets Download
-https://metatext.io/datasets/cc100-albanian
+[VoxLingua107](https://www.arxiv-vanity.com/papers/2011.12998/)
 ```
 import gdown
-gdown.download ('https://bitbucket.org/timarkh/uniparser-albanian-grammar/get/c533b2a52fca.zip', 'timarkh-uniparser-albanian-grammar-c533b2a52fca.zip', quiet=False)
-!unzip timarkh-uniparser-albanian-grammar-c533b2a52fca.zip -d ./timarkh-uniparser-albanian-grammar-c533b2a52fca
+gdown.download ('http://bark.phon.ioc.ee/voxlingua107/sr.zip', 'sr.zip', quiet=False)
+!unzip sr.zip -d ./sr
 ```
-```
-import gdown
-gdown.download ('https://bitbucket.org/timarkh/uniparser-albanian-grammar/get/c533b2a52fca.zip', 'timarkh-uniparser-albanian-grammar-c533b2a52fca.zip', quiet=False)
-!unzip timarkh-uniparser-albanian-grammar-c533b2a52fca.zip -d ./timarkh-uniparser-albanian-grammar-c533b2a52fca
-```
-http://data.statmt.org/cc-100/sq.txt.xz
+
+
