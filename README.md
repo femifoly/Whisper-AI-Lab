@@ -158,16 +158,16 @@ fig.savefig('./'+str(1)+'.png', bbox_inches='tight', pad_inches=0, dpi=128)
 ```
 ##### Save the data in the spectrogram, rather than a plot (image)
 ```
-*save as .npy
+**save as .npy**
 with open('logMel.npy', 'wb') as f:
     np.save(f,mel_spectrogram_db)
     
-*Load the saved data as a confirmation  
+**Load the saved data as a confirmation**  
 with open('logMel.npy', 'rb') as f:
     a = np.load(f)
     print(a.shape)
     print(a)
 
-*save as a.txt file
+**save as a.txt file**
 np.savetxt('logMel.out', mel_spectrogram_db, delimiter=',') # takes more space compared to saving as .npy
 ```
