@@ -226,4 +226,18 @@ from transformers import (
     get_linear_schedule_with_warmup
 )
 ```
+```
+DATASET_DIR = "/content/jvs/jvs_ver1"
+SAMPLE_RATE = 16000
+BATCH_SIZE = 2
+TRAIN_RATE = 0.8
+
+AUDIO_MAX_LENGTH = 480000
+TEXT_MAX_LENGTH = 120
+SEED = 3407
+DEVICE = "gpu" if torch.cuda.is_available() else "cpu"
+seed_everything(SEED, workers=True)
+```
+
+
 
