@@ -144,4 +144,15 @@ plt.show()
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/logmelspectogram.png)
 
-#### 10.
+#### 10. Save the plot in a local directory
+
+```
+fig = plt.Figure(figsize=(8,8), dpi=128, frameon=False)
+canvas = FigureCanvas(fig)
+ax = fig.add_subplot(111)
+ax.axes.get_xaxis().set_visible(False)
+ax.axes.get_yaxis().set_visible(False)
+ax.set_frame_on(False)
+librosa.display.specshow(mel_spectrogram_db, sr=sr, x_axis='time', y_axis='mel',hop_length=hop_length)
+fig.savefig('./'+str(1)+'.png', bbox_inches='tight', pad_inches=0, dpi=128)
+```
