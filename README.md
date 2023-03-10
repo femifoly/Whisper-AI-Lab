@@ -254,3 +254,9 @@ import gdown
 gdown.download ('https://bitbucket.org/timarkh/uniparser-albanian-grammar/get/c533b2a52fca.zip', 'timarkh-uniparser-albanian-grammar-c533b2a52fca.zip', quiet=False)
 !unzip timarkh-uniparser-albanian-grammar-c533b2a52fca.zip -d ./timarkh-uniparser-albanian-grammar-c533b2a52fca
 ```
+```
+import gdown
+gdown.download ('https://bitbucket.org/timarkh/uniparser-albanian-grammar/get/c533b2a52fca.zip', 'timarkh-uniparser-albanian-grammar-c533b2a52fca.zip', quiet=False)
+!unzip timarkh-uniparser-albanian-grammar-c533b2a52fca.zip -d ./timarkh-uniparser-albanian-grammar-c533b2a52fca
+```
+http://data.statmt.org/cc-100/sq.txt.xz
