@@ -177,3 +177,14 @@ with open('logMel.npy', 'rb') as f:
 np.savetxt('logMel.out', mel_spectrogram_db, delimiter=',') # takes more space compared to saving as .npy
 ```
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/logmeltext.png)
+
+#### 11. Visualize the mel filter bank
+```
+mel_filter_bank = librosa.filters.mel(sr=sr, n_fft=n_fft, n_mels=mel_bins, fmin=0.0, fmax=None, htk=False, norm='slaney')
+print("The shape of the mel filter bank is: ", mel_filter_bank.shape)
+librosa.display.specshow(mel_filter_bank, sr=sr, x_axis='linear')
+plt.colorbar(format='%+2.0f dB')
+plt.title('Mel filter bank')
+plt.tight_layout()
+plt.show()
+```
