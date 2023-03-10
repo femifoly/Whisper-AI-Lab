@@ -159,7 +159,9 @@ fig.savefig('./'+str(1)+'.png', bbox_inches='tight', pad_inches=0, dpi=128)
 ##### Save the data in the spectrogram, rather than a plot (image)
 
 *save as .npy*
+
 *Load the saved data as a confirmation*
+
 *save as a.txt file*
 
 ```
