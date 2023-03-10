@@ -157,20 +157,20 @@ librosa.display.specshow(mel_spectrogram_db, sr=sr, x_axis='time', y_axis='mel',
 fig.savefig('./'+str(1)+'.png', bbox_inches='tight', pad_inches=0, dpi=128)
 ```
 ##### Save the data in the spectrogram, rather than a plot (image)
-**save as .npy
-**Load the saved data as a confirmation
+
+**save as .npy**
+**Load the saved data as a confirmation**
+**save as a.txt file**
 
 ```
 
 with open('logMel.npy', 'wb') as f:
     np.save(f,mel_spectrogram_db)
-    
-
+   
 with open('logMel.npy', 'rb') as f:
     a = np.load(f)
     print(a.shape)
     print(a)
 
-save as a.txt file
 np.savetxt('logMel.out', mel_spectrogram_db, delimiter=',') # takes more space compared to saving as .npy
 ```
