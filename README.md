@@ -248,4 +248,4 @@ def load_wave(wave_path, sample_rate:int=16000) -> torch.Tensor:
     return waveform
 ```
 #### 14. Albanian Datasets Download
-[https://metatext.io/datasets/cc100-albanian]
+https://metatext.io/datasets/cc100-albanian
