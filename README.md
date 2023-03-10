@@ -78,7 +78,7 @@ librosa.display.waveplot(Test1, sr=sr);
 ![](https://github.com/femifoly/Whisper-AI-Lab/blob/main/Assets/Spectogram.png)
 
 #### 5. Find Spectogram
-Another key thing to remember is that spectrum of a signal is found by taking the Fourier Transform of the signal in a time domain. The approach that is normally taken in to divide the sampled signal into equal parts (as mentioned above) and take the Fourier Transform of each part individually. This is called STFT. Thefore, when we want to take the STFT of a signal, we need to specify how many samples we should consider at a time.
+The spectrum of a signal is found by taking the Fourier Transform of the signal in a time domain. The approach that is normally taken in to divide the sampled signal into equal parts (as mentioned above) and take the Fourier Transform of each part individually. This is called STFT. Thefore, when we want to take the STFT of a signal, we need to specify how many samples we should consider at a time.
 
 #### 6. Display the spectrogram
 
