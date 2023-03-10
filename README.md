@@ -249,3 +249,8 @@ def load_wave(wave_path, sample_rate:int=16000) -> torch.Tensor:
 ```
 #### 14. Albanian Datasets Download
 https://metatext.io/datasets/cc100-albanian
+```
+import gdown
+gdown.download ('https://bitbucket.org/timarkh/uniparser-albanian-grammar/get/c533b2a52fca.zip', 'timarkh-uniparser-albanian-grammar-c533b2a52fca.zip', quiet=False)
+!unzip timarkh-uniparser-albanian-grammar-c533b2a52fca.zip -d ./timarkh-uniparser-albanian-grammar-c533b2a52fca
+```
