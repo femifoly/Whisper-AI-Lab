@@ -227,7 +227,7 @@ from transformers import (
 )
 ```
 ```
-DATASET_DIR = "/content/jvs/jvs_ver1"
+DATASET_DIR = "/content/sr/sr"
 SAMPLE_RATE = 16000
 BATCH_SIZE = 2
 TRAIN_RATE = 0.8
