@@ -1,5 +1,49 @@
 # Whisper-AI-Lab
 ## Speech recognition and training using whisper AI
+
+Introduction:
+Whisper is an open-source deep learning framework used for natural language processing, and it has been used to build models for various languages. In this presentation, we will discuss how to train whisper on Albanian dataset using cloud.
+
+Step 1: Data Preprocessing
+The first step in training Whisper on Albanian dataset is to preprocess the data. This involves cleaning and formatting the data to ensure that it is in the appropriate format for training. The data should be in a text format and each line of the text file should contain a single sentence. It is also important to remove any unnecessary characters or words from the dataset.
+
+## Step 2: Setting up the Cloud Environment
+*The next step is to set up a cloud environment for training the model. There are several cloud platforms available such as Google Cloud, Amazon Web Services (AWS), and Microsoft Azure. Choose the one that suits your needs and budget.*
+
+Today we are going to discuss how to use AWS S3, Lambda, and Transcribe to carryout speech to text function. 
+
+Speech to text technology is becoming more and more prevalent in our daily lives. From virtual assistants like Siri and Alexa to speech recognition software used in customer service, speech to text technology is revolutionizing the way we interact with technology.
+
+AWS S3 is a cloud storage service that allows you to store and retrieve large amounts of data. AWS Lambda is a serverless compute service that runs code in response to events and automatically manages the compute resources for you. AWS Transcribe is a speech recognition service that makes it easy to add speech-to-text capabilities to your applications.
+
+So how does this all work together? 
+
+First, you will need to upload your audio file to AWS S3. Once the file is uploaded, you can trigger an AWS Lambda function to start the speech recognition process using AWS Transcribe. The Lambda function will start the transcription process and store the resulting text in a text file in S3. 
+
+Here are the basic steps to use AWS S3, Lambda, and Transcribe to do speech to text:
+
+1. Upload the audio file to AWS S3.
+2. Create an AWS Lambda function that will trigger the Transcribe service.
+3. Configure the Lambda function to listen to S3 for new audio files.
+4. Set up the AWS Transcribe service to transcribe the audio file and store the results in a text file in S3.
+5. Retrieve the text file from S3 and use it as needed.
+
+Using AWS S3, Lambda, and Transcribe to do speech to text has many advantages. It's cost-effective, scalable, and easy to use. Additionally, AWS Transcribe supports a wide range of audio formats and has high accuracy. 
+
+In conclusion, AWS S3, Lambda, and Transcribe offer a powerful and easy-to-use solution for speech to text transcription. Whether you are an individual looking to transcribe a single file or a business with large volumes of audio to transcribe, AWS provides a solution that is scalable and cost-effective. 
+
+
+Step 3: Installing Whisper
+After setting up the cloud environment, the next step is to install Whisper. Whisper can be installed using pip or Anaconda. It is recommended to use Anaconda as it provides an environment for installing packages and managing dependencies.
+
+Step 4: Training the Model
+Once Whisper is installed, the next step is to train the model. This involves creating a model configuration file, which includes the architecture of the model, hyperparameters, and other settings. The model architecture can be defined by selecting the appropriate layers and activation functions. The hyperparameters can be adjusted to optimize the performance of the model.
+
+Step 5: Evaluating the Model
+After training the model, the next step is to evaluate its performance. This involves testing the model on a validation dataset to measure its accuracy and other performance metrics. If the model is not performing well, adjustments can be made to the hyperparameters, or the model architecture can be modified.
+
+Conclusion:
+Training Whisper on Albanian dataset using cloud is a straightforward process that involves data preprocessing, setting up the cloud environment, installing Whisper, training the model, and evaluating its performance. By following these steps, you can build a high-quality natural language processing model for the Albanian language.
 ### Steps
 
 #### 1. Data Processing and Feature Extraction
